@@ -1,0 +1,24 @@
+window.addEventListener('load', () => {
+  VANTA.BIRDS({
+    el: "#vanta",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color1: 0x5ba02c,
+    color2: 0x25a251,
+    wingSpan: 40.00,
+    separation: 100.00,
+    alignment: 50.00,
+    cohestion: 5.00,
+    quantity: 2.00,
+    backgroundAlpha: 0.0
+  })
+
+  setTimeout(() => {
+    document.querySelector('main').classList.add('visible');
+  }, 1000)
+})
