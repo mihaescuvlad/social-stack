@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install dependencies and render static files
-        runs: |
+        run: |
           pip install -r requirements.txt
           python render.py
 
