@@ -10,10 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: pip install -r requirements.txt && python render.py
-      - name: Zip Rendered Social Stack
+
+      - name: Install dependencies and render static files
+        run: |
+          pip install -r requirements.txt
+          python render.py
+
+      - name: Zip rendered output
         run: zip -r social-stack.zip renders/
-      - name: Upload to Release
+
+      - name: Upload zip to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: social-stack.zip

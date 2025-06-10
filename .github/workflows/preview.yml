@@ -7,7 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - runs: pip install -r requirements.txt && python render.py
+
+      - name: Install dependencies and render static files
+        runs: |
+          pip install -r requirements.txt
+          python render.py
+
+      - name: Upload static files for preview
         uses: actions/upload-page-artifacts@v3
         with:
           path: renders/
