@@ -10,11 +10,12 @@ html {
 }
 
 body {
-  background: url(./assets/bg01.jpg) repeat center center fixed;
+  background: url(./assets/{{ background }}) repeat center center fixed;
   background-size: cover;
   overflow: auto;
 }
 
+{% if enable_birds %}
 #vanta {
   z-index: 0;
   position: fixed;
@@ -23,6 +24,7 @@ body {
   width: 100vw;
   height: 100vh;
 }
+{% endif %}
 
 main {
   position: relative;
@@ -30,7 +32,6 @@ main {
   filter: blur(10px);
   transition: opacity 1s ease-in-out, filter 1s ease-in-out;
 }
-
 
 main.visible {
   opacity: 1;

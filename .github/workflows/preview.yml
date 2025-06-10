@@ -1,0 +1,13 @@
+name: Pull-Request Preview
+
+on: pull_request
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - runs: pip install -r requirements.txt && python render.py
+        uses: actions/upload-page-artifacts@v3
+        with:
+          path: renders/

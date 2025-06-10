@@ -1,0 +1,18 @@
+background: bg01.jpg
+enable_birds: true
+
+full_name: John Johnny
+profile_picture: profile.jpg
+
+links:
+  - label: LinkedIn
+    url: https://www.linkedin.com/
+    icon: linkedin-in-brands.svg
+
+  - label: X (Twitter)
+    url: https://www.x.com/
+    icon: x-twitter-brands.svg
+
+  - label: GitHub
+    url: https://www.github.com/
+    icon: github-brands.svg
