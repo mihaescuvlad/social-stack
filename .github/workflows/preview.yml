@@ -2,9 +2,16 @@ name: Pull-Request Preview
 
 on: pull_request
 
+permissions:
+  pages: write
+  id-token: write
+
 jobs:
   preview:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -14,6 +21,9 @@ jobs:
           python render.py
 
       - name: Upload static files for preview
-        uses: actions/upload-page-artifacts@v3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: renders/
+
+      - name: Deploy to GitHub Pages preview
+        uses: actions/deploy-pages@v4
